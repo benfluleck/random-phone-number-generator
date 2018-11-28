@@ -8,3 +8,5 @@ const port = process.env.PORT || 3000;
 app.listen(port,
   () => console.log(`Welcome to Phone generator application, listening on ${port}`)
 );
+
+export default app;

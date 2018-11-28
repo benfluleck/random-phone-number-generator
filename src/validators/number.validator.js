@@ -17,6 +17,7 @@ class NumberValidator {
 
   isGreaterThanMaximum(maxValue) {
     if(maxValue < this.value) {
+
       return true;
     }
   }
