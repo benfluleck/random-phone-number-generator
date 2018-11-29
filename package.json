@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start:dev": "babel-watch src/app.js",
-    "test": "NODE_ENV=test nyc --reporter=html --reporter=text mocha src/tests/index.test.js --require @babel/register --exit"
+    "test": "NODE_ENV=test nyc --reporter=html --reporter=text mocha src/tests/index.test.js --require @babel/register --exit",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
     "@babel/cli": "^7.1.5",

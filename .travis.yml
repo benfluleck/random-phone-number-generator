@@ -1,0 +1,13 @@
+language: node_js
+
+node_js:
+  - "8"
+
+services:
+  - docker
+
+script:
+  - docker-compose up
+
+after_success:
+  - npm run coverage
