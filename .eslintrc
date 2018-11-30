@@ -1,4 +1,8 @@
 {
+  "extends": [
+    "airbnb",
+    "react"
+  ],
   "env": {
     "node": true,
     "es6": true
@@ -36,6 +40,9 @@
       {
         "arrays": "never"
       }
+    ],
+    "react/prop-types": [
+      1
     ],
     "no-console": 1,
     "no-constant-condition": 2,

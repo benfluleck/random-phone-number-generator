@@ -1,0 +1,36 @@
+  html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+  }
+  *, :after, :before {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #3c414d;
+    font-family: Lalezar, Helvetica, Arial, sans-serif !important;
+    font-size: 1.4rem;
+  }
+
+  button,
+  a,
+  span {
+    font-family: Lalezar, "Lucida Console", Lalezar, monospace;
+  }
+
+  a {
+    color: #194FE4;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  /* .panel-heading {
+    font-size: 2rem;
+    padding-left: 1rem;
+  } */
