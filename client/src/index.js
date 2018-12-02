@@ -1,18 +1,19 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom'
 import styled from 'styled-components';
-import GeneratePhoneNumbers from './Section/GeneratePhoneNumbers'
 
-import './styles/global.css';
+import BaseRoutes from './pages'
+
+import './assets/styles/global.css';
 
 
-export const App = () => (
+const App = () => (
   <App.Container>
     <App.InnerContainer>
-      <p className="is-size-2">
-        Phone Number Generator
-        </p>
-      <GeneratePhoneNumbers />
+      <Router>
+        <BaseRoutes/>
+      </Router>
     </App.InnerContainer>
   </App.Container>
 );
@@ -26,6 +27,5 @@ App.Container = styled.div`
 App.InnerContainer = styled.div`
   padding-top: 20rem;
 `
-
-
+export default App;
 render(<App />, document.getElementById('app'));
