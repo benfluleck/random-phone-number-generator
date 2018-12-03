@@ -141,8 +141,8 @@
     "handle-callback-err": 1,
     "no-new-require": 2,
     "max-nested-callbacks": [
-      "max",
-      4
+      1,
+      5
     ],
     "array-bracket-spacing": [
       2,

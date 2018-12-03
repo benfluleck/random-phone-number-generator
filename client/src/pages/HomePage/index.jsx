@@ -2,8 +2,8 @@ import React, { Component, Fragment } from 'react';
 
 import validator from '../../utils/validator';
 import axiosConfig from '../../config/axiosConfig';
-import Button from '../../UI/atoms/Button/Button'
-import Title from '../../UI/atoms/Title/Title'
+import Button from '../../UI/atoms/Button/Button';
+import Title from '../../UI/atoms/Title/Title';
 import GenerateNumbers from './Sections/GenerateNumbers';
 
 class HomePage extends Component {
@@ -12,10 +12,12 @@ class HomePage extends Component {
     this.state = {
       numberOfPhonenumbers: '',
       errorMessage: {},
-      isDisabled: false
+      isDisabled: false,
+      isChecked: false,
     };
     this.handleOnChange = this.handleOnChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.toggleCheckbox = this.toggleCheckbox.bind(this);
   }
 
   handleOnChange(e) {
@@ -25,11 +27,15 @@ class HomePage extends Component {
     this.setState({ numberOfPhonenumbers: e.target.value });
   }
 
+  toggleCheckbox() {
+    this.setState({ isChecked: !this.state.isChecked });
+  }
+
   handleClick(e) {
     e.preventDefault();
 
     const dataRules = {
-      numberOfPhonenumbers: ['upperLimit', 'lowerLimit'],
+      numberOfPhonenumbers: [ 'upperLimit', 'lowerLimit' ],
     };
     const messages = {
       numberOfPhonenumbers: {
@@ -40,7 +46,8 @@ class HomePage extends Component {
     };
 
     const {
-      numberOfPhonenumbers
+      numberOfPhonenumbers,
+      isChecked,
     } = this.state;
 
     const validatorResult = validator({ numberOfPhonenumbers }, dataRules, messages);
@@ -48,15 +55,18 @@ class HomePage extends Component {
     if (!validatorResult.isValid) {
       this.setState({ errorMessage: validatorResult.errors });
     } else {
-      this.setState({ isDisabled: true }, () => {
+      let query;
 
+      isChecked ? query = 'desc' : query = '';
+
+      this.setState({ isDisabled: true }, () => {
         axiosConfig
           .phoneNumbers
-          .generate({ numberOfPhonenumbers })
+          .generate({ numberOfPhonenumbers }, query)
           .then(() => {
-            this.props.history.push('/results')
+            this.props.history.push('/results');
           });
-      })
+      });
     }
   }
 
@@ -79,16 +89,19 @@ class HomePage extends Component {
           isDisabled={isDisabled}
           errorMessages={errors}
         />
+        <label className="checkbox has-text-grey-dark is-size-6">
+          <input type="checkbox" onClick={this.toggleCheckbox} />
+             &nbsp;Descending Order: Default file arrangement is Ascending
+        </label>
+        <p className="is-size-6 help" />
         <Button
           isDisabled={isDisabled}
           onClick={this.handleClick}>
-          Generate Numbers
+            Generate Numbers
         </Button>
       </Fragment>
     );
   }
 }
-
-
 
 export default HomePage;

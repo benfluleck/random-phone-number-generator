@@ -1,18 +1,19 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 
-import TableRow from '../../atoms/TableRow/TableRow'
+import TableRow from '../../atoms/TableRow/TableRow';
 
 const Table = ({ items }) => {
-  const allRows = items.map((item, index) =>
+  const allRows = items.map((item, index) => (
     <Fragment key={`${item.name}-${index}`}>
       <TableRow
         name={item.name}
         value={item.value}
       />
     </Fragment>
-  )
+  ));
 
-  return(
+  return (
     <Fragment>
       <table className="table is-striped is-hoverable is-fullwidth">
         <tbody>
@@ -20,8 +21,14 @@ const Table = ({ items }) => {
         </tbody>
       </table>
     </Fragment>
-  )
-}
+  );
+};
 
+Table.propTypes = {
+  items: PropTypes.shape({
+    name: PropTypes.oneOfType([ PropTypes.string, PropTypes.node ]).isRequired,
+    value: PropTypes.number.isRequired,
+  }).isRequired
+};
 
 export default Table;

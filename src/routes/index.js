@@ -5,14 +5,13 @@ import { generatePhonenumbers, downloadPhonenumbers, getPhonenumbersInfo } from 
 export const indexRouter = Router();
 
 indexRouter.route('/')
-.get(
-  (req, res) => res.status(200).json('Welcome to the phone generator endpoints')
+  .get(
+    (req, res) => res.status(200).json('Welcome to the phone generator endpoints')
   );
 
-  indexRouter.route('/phonenumbers')
+indexRouter.route('/phonenumbers')
   .post(generatePhonenumbers)
-  .get(getPhonenumbersInfo)
+  .get(getPhonenumbersInfo);
 
-  indexRouter.get('/download', downloadPhonenumbers )
-
+indexRouter.get('/download', downloadPhonenumbers);
 
