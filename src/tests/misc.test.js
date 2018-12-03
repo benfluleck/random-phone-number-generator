@@ -5,7 +5,7 @@ import app from '../app';
 
 chai.use(chaiHttp);
 
-describe(' Routes', () => {
+describe('Miscellaneous Routes', () => {
   it('should return a 404 for Routes not Found',(done) => {
     chai
       .request(app)

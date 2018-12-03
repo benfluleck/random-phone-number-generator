@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import cors from 'cors';
 
 import { indexRouter } from './routes/index';
 import setGlobalMiddleware from './middleware/setGlobalMiddleware';
@@ -8,6 +9,8 @@ dotenv.config();
 
 
 const app = express();
+
+app.use(cors());
 
 setGlobalMiddleware(app);
 

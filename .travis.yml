@@ -10,4 +10,4 @@ script:
   - docker-compose up
 
 after_success:
-  - npm run coverage
+  - yarn coverage
