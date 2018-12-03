@@ -12,7 +12,7 @@
     background-color: #fff;
     color: #3c414d;
     font-family: Lalezar, Helvetica, Arial, sans-serif !important;
-    font-size: 1.4rem;
+    font-size: 2.4rem;
   }
 
   button,
@@ -28,4 +28,8 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  .loading__wrapper {
+    margin: auto;
   }

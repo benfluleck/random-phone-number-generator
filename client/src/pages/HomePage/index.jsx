@@ -53,8 +53,8 @@ class HomePage extends Component {
         axiosConfig
           .phoneNumbers
           .generate({ numberOfPhonenumbers })
-          .then((response) => {
-            console.log('I have returned something', response);
+          .then(() => {
+            this.props.history.push('/results')
           });
       })
     }
@@ -78,7 +78,7 @@ class HomePage extends Component {
           handleOnChange={this.handleOnChange}
           isDisabled={isDisabled}
           errorMessages={errors}
-          />
+        />
         <Button
           isDisabled={isDisabled}
           onClick={this.handleClick}>

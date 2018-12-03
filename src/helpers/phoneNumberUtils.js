@@ -1,4 +1,3 @@
-// import fs from 'fs';
 import fse from 'fs-extra';
 
 export const generateNumbersForFile = (amountSpecified) => {
