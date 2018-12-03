@@ -1,13 +1,13 @@
 import fs from 'fs-extra';
 import path from 'path';
 
-import { generateNumbersForFile, removeFile, generateFile } from '../helpers/phoneNumberUtils';
+import { generateNumbersForFile, removeFile, generateFile } from '../helpers/phonenumberUtils';
 import NumberValidator from '../validators/number.validator';
 
 
 const filePath = path.join(__dirname, '../../public/text.txt');
 
-export const generatePhoneNumbers = (req, res) => {
+export const generatePhonenumbers = (req, res) => {
   const { numberOfPhonenumbers } = req.body;
   const amountOfNumbers = parseInt(numberOfPhonenumbers);
 
@@ -58,7 +58,7 @@ export const downloadPhonenumbers = (req, res) => {
 };
 
 
-export const getPhoneNumbersInfo = (req, res) => {
+export const getPhonenumbersInfo = (req, res) => {
   let fileContents = []
   if (!fs.existsSync(filePath)) {
     return res.status(404).send({ status: 'error', message: 'File does not exist, please generate the file' });
@@ -69,12 +69,10 @@ export const getPhoneNumbersInfo = (req, res) => {
     fileContents = await data.split('\n')
     return res.status(200).json({
       status: 'success',
-      data: {
-        response: {
-          largestNumber: fileContents[fileContents.length - 1],
-          smallestNumber: fileContents[0],
-          numberOFPhonenumbers: fileContents.length,
-        }
+      response: {
+        largestNumber: fileContents[fileContents.length - 1],
+        smallestNumber: fileContents[0],
+        numberOfPhonenumbers: fileContents.length,
       }
     });
   });

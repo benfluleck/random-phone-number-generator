@@ -26,6 +26,7 @@ App.Container = styled.div`
 
 App.InnerContainer = styled.div`
   padding-top: 20rem;
+  width: 30%;
 `
 export default App;
 render(<App />, document.getElementById('app'));

@@ -7,7 +7,7 @@ const GenerateNumbers = ({ title, numbers, handleOnChange, isDisabled, errorMess
   <GenerateNumbers.Container className="section">
     <label className={
       setClassNames({
-        'is-size-5': true,
+        'is-size-4': true,
         'has-text-centered': true,
         'has-text-weight-light': true,
         'label': true
@@ -17,9 +17,9 @@ const GenerateNumbers = ({ title, numbers, handleOnChange, isDisabled, errorMess
     <input
       className={
         setClassNames({
-          "input": true,
-          "is-medium": true,
-          "is-danger": errorMessages
+          'input': true,
+          'is-medium': true,
+          'is-danger': errorMessages
         })}
       type="text"
       id="addInput"
@@ -35,4 +35,4 @@ GenerateNumbers.Container = styled.section`
 `;
 
 
-export default GenerateNumbers
+export default GenerateNumbers;
