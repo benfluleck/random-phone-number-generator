@@ -47,7 +47,7 @@ GenerateNumbers.defaultProps = {
 
 GenerateNumbers.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
-  numbers: PropTypes.number.isRequired,
+  numbers: PropTypes.string.isRequired,
   isDisabled: PropTypes.bool,
   errorMessages: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   handleOnChange: PropTypes.func,

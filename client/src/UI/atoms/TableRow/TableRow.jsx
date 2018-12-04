@@ -10,7 +10,7 @@ const TableRow = ({ name, value }) => (
 
 TableRow.propTypes = {
   name: PropTypes.oneOfType([ PropTypes.string, PropTypes.node ]).isRequired,
-  value: PropTypes.number.isRequired
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number ]).isRequired,
 };
 
 

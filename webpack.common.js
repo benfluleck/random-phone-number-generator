@@ -15,7 +15,7 @@ module.exports = {
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: './client/index.html',
-      filename: './index.html'
+      inject: 'body',
     })
   ],
   module: {

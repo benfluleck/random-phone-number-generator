@@ -10,14 +10,12 @@ export const generateNumbersForFile = (amountSpecified, query) => {
     generatedSet.add(padZeroToPhoneNumber);
   }
 
-  const sortedArray = (query === 'desc')
-    ? Array.from(generatedSet).sort((a, b) => b - a)
-    : Array.from(generatedSet).sort();
+  const sortedArray = (query === 'desc') ? Array.from(generatedSet).sort((a, b) => b - a) : Array.from(generatedSet).sort();
 
   return { sortedPhonenumbers: sortedArray.join('\n') };
 };
 
-export const removeFile = async(path, res) => {
+export const removeFile = async (path, res) => {
   try {
     await fse.remove(path);
   } catch (err) {
@@ -25,7 +23,7 @@ export const removeFile = async(path, res) => {
   }
 };
 
-export const generateFile = async(path, data, res) => {
+export const generateFile = async (path, data, res) => {
   try {
     await fse.outputFile(path, data, { flag: 'w+' });
   } catch (error) {

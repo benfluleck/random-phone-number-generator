@@ -25,10 +25,12 @@ const Table = ({ items }) => {
 };
 
 Table.propTypes = {
-  items: PropTypes.shape({
-    name: PropTypes.oneOfType([ PropTypes.string, PropTypes.node ]).isRequired,
-    value: PropTypes.number.isRequired,
-  }).isRequired
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.oneOfType([ PropTypes.string, PropTypes.node ]).isRequired,
+      value: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ]).isRequired,
+    }).isRequired
+  ).isRequired
 };
 
 export default Table;
