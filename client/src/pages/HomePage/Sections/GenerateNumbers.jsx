@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-import setClassNames from '../../../utils/setClassNames'
+import setClassNames from '../../../utils/setClassNames';
 
-const GenerateNumbers = ({ title, numbers, handleOnChange, isDisabled, errorMessages }) => (
+const GenerateNumbers = ({
+  title, numbers, handleOnChange, isDisabled, errorMessages
+}) => (
   <GenerateNumbers.Container className="section">
     <label className={
       setClassNames({
@@ -12,7 +15,8 @@ const GenerateNumbers = ({ title, numbers, handleOnChange, isDisabled, errorMess
         'has-text-weight-light': true,
         'label': true
       })}>
-      {title} &nbsp;
+      {title}
+      {' '}
     </label>
     <input
       className={
@@ -27,12 +31,28 @@ const GenerateNumbers = ({ title, numbers, handleOnChange, isDisabled, errorMess
       placeholder="Number of Phone Numbers"
       onChange={handleOnChange}
       disabled={isDisabled && 'disabled'} />
-    <p className="is-size-6 has-text-danger has-text-centered has-text-weight-light label">{errorMessages}</p>
-  </GenerateNumbers.Container>)
+    <p className="is-size-5 has-text-danger has-text-centered has-text-weight-light label">{errorMessages}</p>
+  </GenerateNumbers.Container>);
 
 
 GenerateNumbers.Container = styled.section`
 `;
+
+GenerateNumbers.defaultProps = {
+  isDisabled: false,
+  errorMessages: '',
+  handleOnChange: () => {}
+
+}
+
+GenerateNumbers.propTypes = {
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
+  numbers: PropTypes.string.isRequired,
+  isDisabled: PropTypes.bool,
+  errorMessages: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  handleOnChange: PropTypes.func,
+};
+
 
 
 export default GenerateNumbers;

@@ -9,6 +9,7 @@ const filePath = path.join(__dirname, '../../public/text.txt');
 
 export const generatePhonenumbers = (req, res) => {
   const { numberOfPhonenumbers } = req.body;
+  const { order } = req.query;
   const amountOfNumbers = parseInt(numberOfPhonenumbers);
 
   let inputNumber = new NumberValidator(amountOfNumbers);
@@ -31,7 +32,7 @@ export const generatePhonenumbers = (req, res) => {
 
   removeFile(filePath, res);
 
-  const stringToBeRead = generateNumbersForFile(amountOfNumbers);
+  const stringToBeRead = generateNumbersForFile(amountOfNumbers, order);
 
   generateFile(filePath, stringToBeRead.sortedPhonenumbers, res);
 
@@ -53,27 +54,29 @@ export const downloadPhonenumbers = (req, res) => {
     if (err) {
       return res.status(err.statusCode).send({ status: 'error', message: 'Something went wrong with the download' });
     }
-    return;
   });
 };
 
 
 export const getPhonenumbersInfo = (req, res) => {
-  let fileContents = []
+  let fileContents = [];
+
   if (!fs.existsSync(filePath)) {
     return res.status(404).send({ status: 'error', message: 'File does not exist, please generate the file' });
   }
 
-  fs.readFile(filePath, 'utf8', async (err, data) => {
+  fs.readFile(filePath, 'utf8', async(err, data) => {
     if (err) res.status(500).send({ status: 'error', message: err.message });
-    fileContents = await data.split('\n')
+    fileContents = await data.split('\n');
+    const sortedfileContents = fileContents.sort();
+
     return res.status(200).json({
       status: 'success',
       response: {
-        largestNumber: fileContents[fileContents.length - 1],
-        smallestNumber: fileContents[0],
-        numberOfPhonenumbers: fileContents.length,
+        largestNumber: sortedfileContents[ sortedfileContents.length - 1 ],
+        smallestNumber: sortedfileContents[ 0 ],
+        numberOfPhonenumbers: sortedfileContents.length,
       }
     });
   });
-}
+};

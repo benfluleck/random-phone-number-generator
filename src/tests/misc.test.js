@@ -6,7 +6,7 @@ import app from '../app';
 chai.use(chaiHttp);
 
 describe('Miscellaneous Routes', () => {
-  it('should return a 404 for Routes not Found',(done) => {
+  it('should return a 404 for Routes not Found', (done) => {
     chai
       .request(app)
       .get('/api/v1/phone')
@@ -17,7 +17,8 @@ describe('Miscellaneous Routes', () => {
           .equal(404);
         expect(res.body.error.message).to.equal('Not Found');
         done();
-      }).catch((err) => {
+      })
+      .catch((err) => {
         done(err);
       });
   });
@@ -32,7 +33,8 @@ describe('Miscellaneous Routes', () => {
           .equal(200);
         expect(res.body).to.equal('Welcome to the phone generator endpoints');
         done();
-      }).catch((err) => {
+      })
+      .catch((err) => {
         done(err);
       });
   });

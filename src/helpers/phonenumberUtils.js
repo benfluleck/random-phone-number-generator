@@ -1,6 +1,6 @@
 import fse from 'fs-extra';
 
-export const generateNumbersForFile = (amountSpecified) => {
+export const generateNumbersForFile = (amountSpecified, query) => {
   let generatedSet = new Set();
 
   for (let i = 0; i < amountSpecified; i++) {
@@ -10,24 +10,24 @@ export const generateNumbersForFile = (amountSpecified) => {
     generatedSet.add(padZeroToPhoneNumber);
   }
 
-  const sortedArray = Array.from(generatedSet).sort();
+  const sortedArray = (query === 'desc') ? Array.from(generatedSet).sort((a, b) => b - a) : Array.from(generatedSet).sort();
 
-  return { sortedPhonenumbers: sortedArray.join('\n')}
+  return { sortedPhonenumbers: sortedArray.join('\n') };
 };
 
 export const removeFile = async (path, res) => {
   try {
-    await fse.remove(path)
+    await fse.remove(path);
   } catch (err) {
-    res.status(500).send({ status: 'error', message: err.message })
+    res.status(500).send({ status: 'error', message: err.message });
   }
-}
+};
 
 export const generateFile = async (path, data, res) => {
   try {
-    await fse.outputFile(path, data, { flag: 'w+' })
+    await fse.outputFile(path, data, { flag: 'w+' });
   } catch (error) {
-    res.status(500).send({ status: 'error', message: error.message })
+    res.status(500).send({ status: 'error', message: error.message });
   }
-}
+};
 
