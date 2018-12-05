@@ -7,8 +7,8 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { routingAsObject as route } from './routing';
-import HomePage from './HomePage';
-import ResultsPage from './ResultsPage';
+import HomePage from './HomePage/HomePage';
+import ResultsPage from './ResultsPage/ResultsPage';
 
 
 const BaseRoutes = () => (

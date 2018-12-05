@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import setClassNames from '../../../utils/setClassNames';
+import setClassNames from '../../../helpers/utils/setClassNames';
 
 const GenerateNumbers = ({
-  title, numbers, handleOnChange, isDisabled, errorMessages
+  title, numbers, handleOnChange, isDisabled, errorMessages,
 }) => (
   <GenerateNumbers.Container className="section">
     <label className={
@@ -13,7 +13,7 @@ const GenerateNumbers = ({
         'is-size-4': true,
         'has-text-centered': true,
         'has-text-weight-light': true,
-        'label': true
+        'label': true,
       })}>
       {title}
       {' '}
@@ -23,7 +23,7 @@ const GenerateNumbers = ({
         setClassNames({
           'input': true,
           'is-medium': true,
-          'is-danger': errorMessages
+          'is-danger': errorMessages,
         })}
       type="text"
       id="addInput"
@@ -42,17 +42,15 @@ GenerateNumbers.defaultProps = {
   isDisabled: false,
   errorMessages: '',
   handleOnChange: () => {}
-
 }
 
 GenerateNumbers.propTypes = {
-  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
+  title: PropTypes.oneOfType([ PropTypes.string, PropTypes.node ]).isRequired,
   numbers: PropTypes.string.isRequired,
   isDisabled: PropTypes.bool,
-  errorMessages: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  errorMessages: PropTypes.oneOfType([ PropTypes.string, PropTypes.node ]),
   handleOnChange: PropTypes.func,
 };
-
 
 
 export default GenerateNumbers;

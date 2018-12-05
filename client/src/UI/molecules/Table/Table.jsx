@@ -30,7 +30,7 @@ Table.propTypes = {
       name: PropTypes.oneOfType([ PropTypes.string, PropTypes.node ]).isRequired,
       value: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ]).isRequired,
     }).isRequired
-  ).isRequired
+  ).isRequired,
 };
 
 export default Table;

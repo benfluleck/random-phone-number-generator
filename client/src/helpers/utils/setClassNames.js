@@ -1,7 +1,7 @@
 export default (options) => {
   const classNames = Object.keys(options).map((option, index) => {
     try {
-      if (options[option]) {
+      if (options[ option ]) {
         return option;
       }
     } catch (e) {

@@ -1,0 +1,241 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component - GenerateNumbers should render 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <GenerateNumbers
+    errorMessages="This is an error message"
+    handleOnChange={[Function]}
+    isDisabled={false}
+    numbers="35"
+    title="Test Number"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <label
+          className="is-size-4 has-text-centered has-text-weight-light label"
+        >
+          Test Number
+           
+        </label>,
+        <input
+          className="input is-medium is-danger"
+          disabled={false}
+          id="addInput"
+          onChange={[Function]}
+          placeholder="Number of Phone Numbers"
+          type="text"
+          value="35"
+        />,
+        <p
+          className="is-size-5 has-text-danger has-text-centered has-text-weight-light label"
+        >
+          This is an error message
+        </p>,
+      ],
+      "className": "section",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Test Number",
+            " ",
+          ],
+          "className": "is-size-4 has-text-centered has-text-weight-light label",
+        },
+        "ref": null,
+        "rendered": Array [
+          "Test Number",
+          " ",
+        ],
+        "type": "label",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "input is-medium is-danger",
+          "disabled": false,
+          "id": "addInput",
+          "onChange": [Function],
+          "placeholder": "Number of Phone Numbers",
+          "type": "text",
+          "value": "35",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "This is an error message",
+          "className": "is-size-5 has-text-danger has-text-centered has-text-weight-light label",
+        },
+        "ref": null,
+        "rendered": "This is an error message",
+        "type": "p",
+      },
+    ],
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-bdVaJa",
+        "isStatic": true,
+        "rules": Array [
+          "
+",
+        ],
+      },
+      "displayName": "styled.section",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "sc-bdVaJa",
+      "target": "section",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    },
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <label
+            className="is-size-4 has-text-centered has-text-weight-light label"
+          >
+            Test Number
+             
+          </label>,
+          <input
+            className="input is-medium is-danger"
+            disabled={false}
+            id="addInput"
+            onChange={[Function]}
+            placeholder="Number of Phone Numbers"
+            type="text"
+            value="35"
+          />,
+          <p
+            className="is-size-5 has-text-danger has-text-centered has-text-weight-light label"
+          >
+            This is an error message
+          </p>,
+        ],
+        "className": "section",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Test Number",
+              " ",
+            ],
+            "className": "is-size-4 has-text-centered has-text-weight-light label",
+          },
+          "ref": null,
+          "rendered": Array [
+            "Test Number",
+            " ",
+          ],
+          "type": "label",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "input is-medium is-danger",
+            "disabled": false,
+            "id": "addInput",
+            "onChange": [Function],
+            "placeholder": "Number of Phone Numbers",
+            "type": "text",
+            "value": "35",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "This is an error message",
+            "className": "is-size-5 has-text-danger has-text-centered has-text-weight-light label",
+          },
+          "ref": null,
+          "rendered": "This is an error message",
+          "type": "p",
+        },
+      ],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-bdVaJa",
+          "isStatic": true,
+          "rules": Array [
+            "
+",
+          ],
+        },
+        "displayName": "styled.section",
+        "foldedComponentIds": Array [],
+        "render": [Function],
+        "styledComponentId": "sc-bdVaJa",
+        "target": "section",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      },
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

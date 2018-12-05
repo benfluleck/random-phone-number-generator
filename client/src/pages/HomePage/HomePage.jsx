@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
-import validator from '../../utils/validator';
+import validator from '../../helpers/utils/validator';
 import axiosConfig from '../../config/axiosConfig';
 import Button from '../../UI/atoms/Button/Button';
 import Title from '../../UI/atoms/Title/Title';
@@ -28,7 +28,9 @@ class HomePage extends Component {
   }
 
   toggleCheckbox() {
-    this.setState({ isChecked: !this.state.isChecked });
+    const { isChecked } = this.state;
+
+    this.setState({ isChecked: !isChecked });
   }
 
   handleClick(e) {

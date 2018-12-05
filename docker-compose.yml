@@ -3,8 +3,11 @@ version: '3'
 services:
   web:
     container_name: docker-lms-phone-numbers
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
       - MAX_VALUE=${MAX_VALUE}
       - MIN_VALUE=${MIN_VALUE}
-    command: yarn test
+
+
