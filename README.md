@@ -6,7 +6,7 @@
 
 # Random Phone Generator
 
-The random phone number generator is a project inspired by my LMS Outputs for [Andela](www.andela.com). The aim is to a specified amount of random phone numbers. The results are downloadable in a text file which consists of these phone numbers sorted in ascending or descending order.
+The random phone number generator is a project inspired by my LMS Outputs for [Andela](https://andela.com/). The aim is to a specified amount of random phone numbers. The results are downloadable in a text file which consists of these phone numbers sorted in ascending or descending order.
 
 <br />
 <br />
