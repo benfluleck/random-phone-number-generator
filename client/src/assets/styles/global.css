@@ -30,6 +30,10 @@
     }
   }
 
+  .table td {
+    font-family: Raleway;
+  }
+
   .loading__wrapper {
     margin: auto;
   }

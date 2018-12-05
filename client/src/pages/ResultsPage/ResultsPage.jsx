@@ -67,21 +67,21 @@ class ResultsPage extends Component {
 
   render() {
     const {
-      maximumNumber, minimumNumber, numberOfPhonenumbers, isLoading
+      maximumNumber, minimumNumber, numberOfPhonenumbers, isLoading,
     } = this.state;
 
     const items = [
       {
         name: 'Smallest Phone Number',
-        value: minimumNumber
+        value: minimumNumber,
       },
       {
         name: 'Largest Phone Number',
-        value: maximumNumber
+        value: maximumNumber,
       },
       {
         name: 'Number of Phone Numbers',
-        value: numberOfPhonenumbers
+        value: numberOfPhonenumbers,
       },
     ];
 
@@ -90,23 +90,24 @@ class ResultsPage extends Component {
         <ResultsPage.Title>
           <Title>Latest Generated File Info.</Title>
         </ResultsPage.Title>
+        <p className=" is-size-4 has-text-grey-light panel-heading">To view all phone numbers, please download the file</p>
         <Table items={items} />
-        <div className="field is-grouped">
+        <ResultsPage.Buttons className="field is-grouped">
           <p className="control">
             <Button onClick={this.handleDownload}>Download File</Button>
           </p>
           <p className="control">
             <Button onClick={this.handleRedirect}>Back To HomePage</Button>
           </p>
-        </div>
+        </ResultsPage.Buttons>
+
       </Fragment>
     );
-
-
     return isLoading ? <LoadingWrapper /> : renderResultsPage();
 
   }
 }
+
 
 
 ResultsPage.Title = styled.div`
@@ -120,5 +121,9 @@ ResultsPage.Title = styled.div`
   &:last-child::after {
     display: none;
   }`;
+
+ResultsPage.Buttons = styled.div`
+  justify-content: space-between !important;
+`
 
 export default ResultsPage;

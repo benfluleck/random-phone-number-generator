@@ -15,7 +15,6 @@ describe('Miscellaneous Routes', () => {
         expect(res.status)
           .to
           .equal(404);
-        expect(res.body.error.message).to.equal('Not Found');
         done();
       })
       .catch((err) => {

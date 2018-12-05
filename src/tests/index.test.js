@@ -1,2 +1,2 @@
-require('./phoneNumber.test');
+require('./phonenumbers.test');
 require('./misc.test');
