@@ -6,7 +6,7 @@
 
 # Random Phone Generator
 
-The random phone number generator is a project inspired by my LMS Outputs for [Andela](https://andela.com/). The aim is to a specified amount of random phone numbers. The results are downloadable in a text file which consists of these phone numbers sorted in ascending or descending order.
+The random phone number generator is a project inspired by my LMS Outputs for [Andela](https://andela.com/) for my D2 Assessments. The aim is to  specify an amount of random phone numbers you would like to generate. The results are downloadable in a text file which consists of these phone numbers sorted in ascending or descending order.
 
 <br />
 <br />
@@ -28,7 +28,7 @@ The random phone number generator is a project inspired by my LMS Outputs for [A
 
 
 ## Getting Started
-This is a javascript application built with [**Node JS**](https://nodejs.org/en/) using [**Express**](https://expressjs.com/) framework. This application runs on any browser that is not IE as there are issues with the file-downloader.
+This is a javascript application built with [**Node JS**](https://nodejs.org/en/) using [**Express**](https://expressjs.com/) framework on the backend and React JS on the frontend. This application can run on any browser that is not IE &#x1F600; as there are issues with the file-downloader.
 
 ## Technology Stack
 **UI & Templates**
@@ -67,12 +67,6 @@ yarn start:server-prod
 yarn client:dev
 yarn server:dev
 ```
-
-## Usage
-- Start the application by running the server `yarn server:dev`
-- You can test routes on Postman
-- To start the client `yarn client:dev`
-- Install **Postman** and use to test all endpoints
 
 ## Testing
 
