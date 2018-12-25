@@ -4,7 +4,6 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": " ",
     "server:dev": "babel-watch src/app.js",
     "build:server-prod": "babel src --out-dir dist",
     "start:server-prod": "node  dist/app.js",
